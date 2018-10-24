@@ -4,7 +4,7 @@
 Start off by cloning the Repository!
 
 ### Using a Virtual Environment, Flask, and Requests
-This site uses Flask, which needs to be installed. Please use a virtual environent, or venv, to do so. 
+This site uses Flask and requests, which need to be installed. Please use a virtual environent, or venv, to do so. 
 
 Installing a venv is not so hard! 
 Type this into your terminal to create one and set it up for this program. 
