@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DALI Dashboard</title>
+<link rel="stylesheet" type="text/css" href="static/foundation.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+* {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+  </head>
+
+  <body style="background-color: lightgreen;">
+    <div class="header" style="background-color: white;">
+      <div id="head1">
+	<h1>Meet the DALI Lab!</h1>
+	<h2 style="font-size: 20px;">By Ray Jones</h2>
+      </div>
+    </div>
+<br><br><br><br><br><br><br><br>
+    <div class="header2">
+      <form method="post">
+	<div class="grid-x grid-padding-x">
+	  <div class="large-2 medium-2 small-1 cell">
+	    <label></label>
+	  </div>
+	  <!--<div class="sectioning">-->
+    <div class="large-2 medium-1 small-3 cell">
+	  </div>
+	    <div class="large-4 medium-6 small-8 cell" >
+	    	<h2 align="center" style="font-family: Arial;">Click on a message to see more about its author!</h2>
+
+	</div>
+
+</form>
+</div>	
+
+<div class="row">
+  {% for person in display %}
+  <div class="container">
+  <div class="icon">
+
+      <img src={{display[person]["iconURL"]}} height="100" width="100" border="3" style="border-radius: 50%; border-color: white;">
+</div>
+
+<a href="/profile"> 
+<div class="textMessage">
+  <div class="speech-bubble" >
+<h3></h3>
+    <br>
+	<message>{{display[person]["message"]}}</message><br>
+    <br><br><br>
+  </div>
+  </div>
+
+  </a>
+</div>
+
+{% endfor %}
+
+</div>
+  </body>
+</html>

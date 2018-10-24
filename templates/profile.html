@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DALI Dashboard</title>
+<link rel="stylesheet" type="text/css" href="static/foundation.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+</style>
+
+  </head>
+
+  <body style="background-color: lightgreen;">
+    <div class="header" style="background-color: white;">
+      <div id="head1">
+  <h1>Meet the DALI Lab!</h1>
+      </div>
+    </div>
+<br><br><br><br><br><br><br><br>
+
+
+  {% for person in display %}
+    <img src={{display[person]["iconURL"]}} height="100" width="100">
+    <br>
+    Name: {{display[person]["name"]}} <br>
+    On for <b>{{display[person]["termsOn"]}}</b><br>
+    Project: {{display[person]["project"]}}<br>
+    From:  {{display[person]["hometown"]}}  <br>
+    Site: <a href={{display[person]["url"]}}>Click Me!</a><br>
+    <br>
+  </div>
+{% endfor %}
+
+  </body>
+</html>

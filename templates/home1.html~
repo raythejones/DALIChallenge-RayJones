@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DALI Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="static/foundation.css">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+* {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+  </head>
+
+  <body style="background-color:#CFCDCC;">
+    <div class="header" style="background-color:#5ACCDE;">
+      <div id="head1">
+	<h1>DALI Lab Dashboard</h1>
+      </div>
+      <div id = "head2">
+	       DALI Lab Members {{group}}
+      </div>
+    </div>
+
+    <div class="header2">
+      <form method="post">
+	<div class="grid-x grid-padding-x">
+	  <div class="large-2 medium-2 small-1 cell">
+	    <label></label>
+	  </div>
+	  <!--<div class="sectioning">-->
+    <div class="large-2 medium-1 small-3 cell">
+	  </div>
+	    <div class="large-4 medium-6 small-8 cell" >
+          <label>Input desired on-term: </label>
+              <input type="text" placeholder="Ex: 17X" name="term" step="0.01" min="0" class="input-group-field"/>
+            </div>
+	  <!--</div>-->
+	  <div class="large-2 medium-2 small-1 cell">
+	  </div>
+	</div>
+
+	<div class="grid-x grid-padding-x">
+	  <div class="sectioning">
+	  </div>
+	  <div class="large-2 medium-2 small-1 cell">
+	  </div>
+	</div>
+	<div>
+	  <button class="secondary button" type="submit" style="background-color:#DF6719;">
+	    Search!
+	  </button>
+	</div>
+</form>
+</div>
+
+<div class="row">
+  {% for person in display %}
+  <div class="column" >
+    <h3><a href={{display[person]["url"]}}>{{person}}</a></h3>
+    <img src={{display[person]["iconURL"]}} height="100" width="100">
+    <br>
+    On for <b>{{display[person]["termsOn"]}}</b><br>
+    Project: {{display[person]["project"]}}<br>
+    From:  {{display[person]["hometown"]}}  <br>
+    Message: {{display[person]["message"]}}<br>
+    <br>
+  </div>
+{% endfor %}
+
+</div>
+  </body>
+</html>
