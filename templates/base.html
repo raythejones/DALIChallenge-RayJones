@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='foundation.css')}}">
+  <link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles.css')}}">
+  <title>{% block title %} {% endblock %}</title>
+</head>
+ <body style="background-color: lightgreen;"><br>
+    <div class="header" style="background-color: white;">
+      <div id="head1">
+  <h1>Meet the DALI Lab!</h1>
+  <h2 style="font-size: 20px;">By Ray Jones</h2>
+      </div>
+    </div>
+<br><br><br><br><br><br>
+
+  {% block body %}
+
+    {% endblock %}
+
+
+  </body>
+</html>

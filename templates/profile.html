@@ -1,39 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DALI Dashboard</title>
-<link rel="stylesheet" type="text/css" href="static/foundation.css">
-    <link rel="stylesheet" type="text/css" href="static/styles.css">
-    <style>
-* {
-    box-sizing: border-box;
-}
 
-</style>
+{% extends "base.html" %}
 
-  </head>
+{% block body %}
+<div align="center">
+<div style="padding-top: 1%; background-color: green; margin:0 auto; width: 50%; border-radius: 20px;">
+    <img src={{thePerson["iconURL"]}} height="300" width="300" border="3" style="border-radius: 50%; border-color: white;">
+    
+<div align="left" style="margin:0 auto; width: 50%;"><br><h2 style="color: white;">
+    Name: {{thePerson["name"]}} <br>
+    On for {{thePerson["termsOn"]}}<br>
+    Project: {{thePerson["project"]}}<br>
+    Site: <a style="color: lightgreen;" href={{thePerson["url"]}}>Click Me!</a><br>
+    <br></h2></div> </div>
+<a href="{{ url_for('root') }}">  <h1> Go Back Home!</h1></a>  </div>
 
-  <body style="background-color: lightgreen;">
-    <div class="header" style="background-color: white;">
-      <div id="head1">
-  <h1>Meet the DALI Lab!</h1>
-      </div>
-    </div>
-<br><br><br><br><br><br><br><br>
+{% endblock %}
 
-
-  {% for person in display %}
-    <img src={{display[person]["iconURL"]}} height="100" width="100">
-    <br>
-    Name: {{display[person]["name"]}} <br>
-    On for <b>{{display[person]["termsOn"]}}</b><br>
-    Project: {{display[person]["project"]}}<br>
-    From:  {{display[person]["hometown"]}}  <br>
-    Site: <a href={{display[person]["url"]}}>Click Me!</a><br>
-    <br>
-  </div>
-{% endfor %}
-
-  </body>
-</html>
